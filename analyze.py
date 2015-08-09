@@ -8,7 +8,7 @@ import zipfile
 
 
 def filter_into_city(filename):
-    city = raw_input('Enter city [default=None]: ')
+    city = raw_input('\nEnter city [default=None]: ')
     print "Filtering data..."
 
     if city:
@@ -157,7 +157,7 @@ def download_data():
         os.makedirs(output_dir)
     output_file = output_dir + counties[county] + '.zip'
 
-    print 'Downloading data...'
+    print '\nDownloading data...'
 
     urllib.urlretrieve(url, output_file)
 
@@ -229,7 +229,7 @@ def parse_parties(filename):
         for row in democrats:
             writer.writerow(row)
 
-    print 'Found ' + str(len(democrats)) + ' Democrats.'
+    print '\nFound ' + str(len(democrats)) + ' Democrats.'
     print 'Data output to ' + democrats_output
 
     with open(republicans_output, 'wb') as output_file:
@@ -238,7 +238,7 @@ def parse_parties(filename):
         for row in republicans:
             writer.writerow(row)
 
-    print 'Found ' + str(len(republicans)) + ' Republicans.'
+    print '\nFound ' + str(len(republicans)) + ' Republicans.'
     print 'Data output to ' + republicans_output
 
     with open(independents_output, 'wb') as output_file:
@@ -247,7 +247,7 @@ def parse_parties(filename):
         for row in independents:
             writer.writerow(row)
 
-    print 'Found ' + str(len(independents)) + ' Independents.'
+    print '\nFound ' + str(len(independents)) + ' Independents.'
     print 'Data output to ' + independents_output
 
 if __name__ == '__main__':
