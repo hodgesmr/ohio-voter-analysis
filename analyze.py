@@ -132,7 +132,8 @@ def download_data():
         print str(i+1) + ' - ' + counties[i]
 
     try:
-        county = int(raw_input('Select county [1-88]: ')) - 1
+        prompt = 'Select county [1-' + str(len(counties)) + ']: '
+        county = int(raw_input(prompt)) - 1
         if county not in range(0, len(counties)):
             raise ValueError
     except ValueError:
