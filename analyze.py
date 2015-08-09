@@ -142,7 +142,7 @@ def download_data():
 
     url = 'ftp://sosftp.sos.state.oh.us/free/Voter/' + counties[county] + '.zip'
     my_dir = os.path.dirname(os.path.realpath(__file__))
-    output_dir = my_dir + '/data/'
+    output_dir = my_dir + '/data/' + counties[county] + '_COUNTY/'
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -158,7 +158,7 @@ def download_data():
     os.remove(output_file)
 
     old_filename = output_dir + counties[county] + '.TXT'
-    new_filename = output_dir + counties[county] + '.csv'
+    new_filename = output_dir + counties[county] + '_COUNTY.csv'
     os.rename(old_filename, new_filename)
 
     return new_filename
