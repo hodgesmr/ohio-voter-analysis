@@ -27,7 +27,7 @@ def filter_into_city(filename):
                 sys.exit(1)
 
             # Filter in the data
-            city_column = 12
+            city_column = 13
             pattern = '^([^,]*,){' + str(city_column) + '}' + city + ','
             r_val = subprocess.call(
                 ['grep', '-E', pattern, filename],
@@ -176,8 +176,8 @@ def download_data():
 def parse_parties(filename):
     print "Inferring party affiliations..."
 
-    party_column = 9
-    first_election_column = 45
+    party_column = 10
+    first_election_column = 46
 
     democrats = []
     republicans = []
